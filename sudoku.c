@@ -18,6 +18,30 @@ Node* copy(Node* n){
     return new;
 }
 
+List* get_adj_nodes(Node* n){
+    List* list=createList();
+    int i,j;
+    for (i=0;i<9;i++){
+        for(j=0;j<9;j++){
+            if(n->sudo[i][j]==0){
+                int k;
+                for(k=1;k<10;k++){
+                    Node* new=copy(n);
+                    new->sudo[i][j]=k;
+                    pushBack(list,new);
+                }
+                return list;
+            }
+        }
+    }
+
+
+
+    return list;
+}
+
+
+
 Node* read_file (char* file_name){
   Node* n = createNode();
   FILE* file = fopen (file_name, "r");
@@ -48,11 +72,6 @@ int is_valid(Node* n){
     return 1;
 }
 
-
-List* get_adj_nodes(Node* n){
-    List* list=createList();
-    return list;
-}
 
 
 int is_final(Node* n){
