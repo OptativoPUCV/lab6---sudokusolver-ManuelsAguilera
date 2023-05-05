@@ -62,70 +62,56 @@ void print_node(Node *n) {
   printf("\n");
 }
 
-int revisarFila(int matriz[9][9], int dato,
-                int indice) // analiza si esta en la fila
-{
-  for (int i = 0; i < 9; i++)
-    if (matriz[indice][i] == dato)
-      return 0;
-
-  return 1;
-}
-
-int revisarCol(int matriz[9][9], int dato,
-               int indice) // analiza si esta en la columna
-{
-  for (int i = 0; i < 9; i++)
-    if (matriz[i][indice] == dato)
-      return 0;
-
-  return 1;
-}
-
 int is_valid(Node *n) {
-  /*Ver si cada valor es unico en su fila, o su columna*/
-  /*no se repita en submatriz:
-      Este paso se podria hacer una vez cada que se entre a
-      la submatriz*/
-  /*Revisar en cada submatriz si es valido, en vez de la matriz
-  entera y luego la submatriz*/
-  int i, j, k;
-  for (k = 1; k <= 9; k++) { // k es la submatriz
-    int submatriz[10] = {0, 0, 0, 0, 0,
-                         0, 0, 0, 0}; // si una posicion es 1 entonces ya existe
 
-    for (i = 0; i < 3; i++)   // i es la fila
-      for (j = 0; j < 3; j++) // j es la columna
-      {
-        int dato = n->sudo[i][j];
-        if (dato == 0)
-          continue;
-        if (submatriz[dato] == 1)
-          return 0;
-        submatriz[dato] = 1;
-        if (revisarFila(n->sudo, dato, i) == 1)
-          return 0;
-        if (revisarCol(n->sudo, dato, j) == 1)
-          return 0;
-      }
+  int i, j, numSub, k;
+  int mapRepite[9][9]; // mapa de repeticiones
+
+  // recorrer cada submatriz de 3x3 en el sudoku
+
+  for (numSub = 0; numSub < 9; numSub++) // indice de la submatriz.
+  {
+    int submatriz[9] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
+    for (k = 0; k < 9; k++) // numeros del 1 al 9
+    {
+      i = 3 * (numSub / 3) + (k / 3);
+      j = 3 * (numSub % 3) + (k % 3); // indice en la matriz del sudoku
+
+      int dato = n->sudo[i][j];
+
+      if (mapRepite[i][dato - 1] == 1) // Revisa si se repite en la fila
+        return 0;
+      else
+        mapRepite[i][dato - 1] = 1;
+
+      if (mapRepite[dato - 1][j] == 1) // revisa si se repite en la columna
+        return 0;
+      else
+        mapRepite[dato - 1][j] = 1;
+
+      // Revisar submatriz
+
+      if (submatriz[dato - 1] == 1)
+        return 0;
+      else
+        submatriz[dato - 1] = 1;
+    }
+    return 1;
   }
 
-  return 1;
-}
+  int is_final(Node * n) { return 0; }
 
-int is_final(Node *n) { return 0; }
+  Node *DFS(Node * initial, int *cont) { return NULL; }
 
-Node *DFS(Node *initial, int *cont) { return NULL; }
+  /*
+  int main( int argc, char *argv[] ){
 
-/*
-int main( int argc, char *argv[] ){
+    Node* initial= read_file("s12a.txt");;
 
-  Node* initial= read_file("s12a.txt");;
+    int cont=0;
+    Node* final = DFS(initial, &cont);
+    printf("iterations:%d\n",cont);
+    print_node(final);
 
-  int cont=0;
-  Node* final = DFS(initial, &cont);
-  printf("iterations:%d\n",cont);
-  print_node(final);
-
-  return 0;
-}*/
+    return 0;
+  }*/
