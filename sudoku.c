@@ -67,9 +67,9 @@ int revisarFila(int matriz[9][9], int dato,
 {
   for (int i = 0; i < 9; i++)
     if (matriz[indice][i] == dato)
-      return 1;
+      return 0;
 
-  return 0;
+  return 1;
 }
 
 int revisarCol(int matriz[9][9], int dato,
@@ -77,9 +77,9 @@ int revisarCol(int matriz[9][9], int dato,
 {
   for (int i = 0; i < 9; i++)
     if (matriz[i][indice] == dato)
-      return 1;
+      return 0;
 
-  return 0;
+  return 1;
 }
 
 int is_valid(Node *n) {
