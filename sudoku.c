@@ -71,7 +71,7 @@ int is_valid(Node *n) {
 
   for (numSub = 0; numSub < 9; numSub++) // indice de la submatriz.
   {
-    free(submatriz);
+
     submatriz = calloc(9, sizeof(int)); // memoria dinamica para poder borrar
                                         // y reinicializar en 0 mas facil.
     for (k = 0; k < 9; k++)             // numeros del 1 al 9
@@ -98,6 +98,7 @@ int is_valid(Node *n) {
       else
         submatriz[dato - 1] = 1;
     }
+    free(submatriz); // so that it can be used malloc again
   }
   return 1;
 }
