@@ -66,14 +66,15 @@ int is_valid(Node *n) {
 
   int i, j, numSub, k;
   int mapRepite[9][9] = {0}; // mapa de repeticiones
-  int submatriz[9] = {0};
+  int *submatriz;
   // recorrer cada submatriz de 3x3 en el sudoku
 
   for (numSub = 0; numSub < 9; numSub++) // indice de la submatriz.
   {
-    submatriz[9] = {0};
-
-    for (k = 0; k < 9; k++) // numeros del 1 al 9
+    free(submatriz);
+    submatriz = calloc(9, sizeof(int)); // memoria dinamica para poder borrar
+                                        // y reinicializar en 0 mas facil.
+    for (k = 0; k < 9; k++)             // numeros del 1 al 9
     {
       i = 3 * (numSub / 3) + (k / 3);
       j = 3 * (numSub % 3) + (k % 3); // indice en la matriz del sudoku
