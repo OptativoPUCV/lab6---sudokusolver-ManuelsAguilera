@@ -96,8 +96,9 @@ int is_valid(Node *n) {
       else
         submatriz[dato - 1] = 1;
     }
-    return 1;
   }
+  return 1;
+}
 
   int is_final(Node * n) { return 0; }
 
