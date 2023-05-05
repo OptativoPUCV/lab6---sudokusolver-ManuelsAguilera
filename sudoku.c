@@ -65,13 +65,13 @@ void print_node(Node *n) {
 int is_valid(Node *n) {
 
   int i, j, numSub, k;
-  int mapRepite[9][9]; // mapa de repeticiones
+  int mapRepite[9][9] = {0}; // mapa de repeticiones
 
   // recorrer cada submatriz de 3x3 en el sudoku
 
   for (numSub = 0; numSub < 9; numSub++) // indice de la submatriz.
   {
-    int submatriz[9] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
+    int submatriz[9] = {0};
     for (k = 0; k < 9; k++) // numeros del 1 al 9
     {
       i = 3 * (numSub / 3) + (k / 3);
@@ -100,19 +100,19 @@ int is_valid(Node *n) {
   return 1;
 }
 
-  int is_final(Node * n) { return 0; }
+int is_final(Node *n) { return 0; }
 
-  Node *DFS(Node * initial, int *cont) { return NULL; }
+Node *DFS(Node *initial, int *cont) { return NULL; }
 
-  /*
-  int main( int argc, char *argv[] ){
+/*
+int main( int argc, char *argv[] ){
 
-    Node* initial= read_file("s12a.txt");;
+  Node* initial= read_file("s12a.txt");;
 
-    int cont=0;
-    Node* final = DFS(initial, &cont);
-    printf("iterations:%d\n",cont);
-    print_node(final);
+  int cont=0;
+  Node* final = DFS(initial, &cont);
+  printf("iterations:%d\n",cont);
+  print_node(final);
 
-    return 0;
-  }*/
+  return 0;
+}*/
