@@ -67,12 +67,6 @@ int is_valid(Node *n) {
   int i, j, numSub, k;
   int mapFila[9][9] = {};
   int mapCol[9][9] = {};
-  for (int i = 0; i < 9; i++)
-    for (int j = 0; j < 9; j++)
-      if (j == 8)
-        printf("%d\n", mapFila[i][j]);
-      else
-        printf("%d", mapFila[i][j]);
   // mapa de repeticiones
   int *submatriz;
   // recorrer cada submatriz de 3x3 en el sudoku
@@ -106,6 +100,13 @@ int is_valid(Node *n) {
       else
         submatriz[dato - 1] = 1;
     }
+	for (int i = 0; i < 9; i++)
+    for (int j = 0; j < 9; j++)
+      if (j == 8)
+        printf("%d\n", mapFila[i][j]);
+      else
+        printf("%d", mapFila[i][j]);
+
     free(submatriz); // so that it can be used malloc again
   }
   return 1;
