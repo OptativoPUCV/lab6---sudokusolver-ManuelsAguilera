@@ -67,9 +67,12 @@ int is_valid(Node *n) {
   int i, j, numSub, k;
   int mapFila[9][9] = {};
   int mapCol[9][9] = {};
-	Node* aux = copy(n);
-	aux->sudo = {0};
-	print_node(aux);
+  for (int i = 0; i < 9; i++)
+    for (int j = 0; j < 9; j++)
+      if (j = 8)
+        printf("%d\n", mapFila[i][j]);
+      else
+        printf("%d", mapFila[9][9]);
   // mapa de repeticiones
   int *submatriz;
   // recorrer cada submatriz de 3x3 en el sudoku

@@ -112,3 +112,14 @@ sudoku.c:71:21: error: expected expression before ‘{’ token
       |                     ^
 Compilation failed
 e114db7
+Sat 06 May 2023 04:57:24 PM UTC: 
+ sudoku.c | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:72:11: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+   72 |       if (j = 8)
+      |           ^
+cc1: all warnings being treated as errors
+Compilation failed
+a1a5744
