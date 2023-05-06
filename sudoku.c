@@ -99,6 +99,7 @@ int is_valid(Node *n) {
 	        printf("%d\n", mapFila[i][j]);
 	      else
 	        printf("%d", mapFila[i][j]);
+		printf("\n");
       // Revisar submatriz
 
       if (submatriz[dato - 1] == 1)

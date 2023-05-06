@@ -152,3 +152,17 @@ Sat 06 May 2023 05:04:07 PM UTC:
  tests:  2|4
 total_score: 15/70
 00e0c08
+Sat 06 May 2023 05:04:29 PM UTC: 
+ sudoku.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:100:15: error: this ‘else’ clause does not guard... [-Werror=misleading-indentation]
+  100 |               else
+      |               ^~~~
+sudoku.c:102:17: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘else’
+  102 |                 printf("\n");
+      |                 ^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+e223597
