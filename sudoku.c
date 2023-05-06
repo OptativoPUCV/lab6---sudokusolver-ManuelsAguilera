@@ -65,7 +65,8 @@ void print_node(Node *n) {
 int is_valid(Node *n) {
 
   int i, j, numSub, k;
-  int mapRepite[9][9] = {0}; // mapa de repeticiones
+  int mapFila[9][9] = {0};
+  int mapCol[9][9] = {0};// mapa de repeticiones
   int *submatriz;
   // recorrer cada submatriz de 3x3 en el sudoku
 
@@ -81,15 +82,15 @@ int is_valid(Node *n) {
 
       int dato = n->sudo[i][j];
 
-      if (mapRepite[i][dato - 1] == 1) // Revisa si se repite en la fila
+      if (mapFila[i][dato - 1] == 1) // Revisa si se repite en la fila
         return 0;
       else
-        mapRepite[i][dato - 1] = 1;
+        mapFila[i][dato - 1] = 1;
 
-      if (mapRepite[dato - 1][j] == 1) // revisa si se repite en la columna
+      if (mapCol[dato - 1][j] == 1) // revisa si se repite en la columna
         return 0;
       else
-        mapRepite[dato - 1][j] = 1;
+        mapCol[dato - 1][j] = 1;
 
       // Revisar submatriz
 
