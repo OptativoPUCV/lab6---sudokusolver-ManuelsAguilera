@@ -82,6 +82,8 @@ int is_valid(Node *n) {
       j = 3 * (numSub % 3) + (k % 3); // indice en la matriz del sudoku
 
       int dato = n->sudo[i][j];
+      if (dato == 0)
+        return 0;
 
       if (mapFila[i][dato - 1] == 1) // Revisa si se repite en la fila
         return 0;
