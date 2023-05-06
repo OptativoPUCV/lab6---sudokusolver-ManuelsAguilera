@@ -102,3 +102,13 @@ sudoku.c:71:21: error: expected expression before ‘{’ token
       |                     ^
 Compilation failed
 827fa7d
+Sat 06 May 2023 04:55:16 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:71:21: error: expected expression before ‘{’ token
+   71 |         aux->sudo = {0};
+      |                     ^
+Compilation failed
+e114db7

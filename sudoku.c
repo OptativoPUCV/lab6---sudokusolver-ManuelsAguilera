@@ -68,7 +68,7 @@ int is_valid(Node *n) {
   int mapFila[9][9] = {};
   int mapCol[9][9] = {};
 	Node* aux = copy(n);
-	aux->sudo = {};
+	aux->sudo = {0};
 	print_node(aux);
   // mapa de repeticiones
   int *submatriz;
