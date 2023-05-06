@@ -93,13 +93,14 @@ int is_valid(Node *n) {
       else
         mapCol[dato - 1][j] = 1;
 
-		for (int i = 0; i < 9; i++)
-	    for (int j = 0; j < 9; j++)
-	      if (j == 8)
-	        printf("%d\n", mapFila[i][j]);
-	      else
-	        printf("%d", mapFila[i][j]);
-		printf("\n");
+      for (int i = 0; i < 9; i++)
+        for (int j = 0; j < 9; j++)
+          if (j == 8)
+            printf("%d\n", mapFila[i][j]);
+          else
+            printf("%d", mapFila[i][j]);
+
+      printf("\n\n");
       // Revisar submatriz
 
       if (submatriz[dato - 1] == 1)
@@ -107,8 +108,7 @@ int is_valid(Node *n) {
       else
         submatriz[dato - 1] = 1;
     }
-	
-	
+
     free(submatriz); // so that it can be used malloc again
   }
   return 1;
