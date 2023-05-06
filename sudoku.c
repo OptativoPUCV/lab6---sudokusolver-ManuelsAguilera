@@ -83,7 +83,7 @@ int is_valid(Node *n) {
 
       int dato = n->sudo[i][j];
       if (dato == 0)
-        return 0;
+        continue;
 
       if (mapFila[i][dato - 1] == 1) // Revisa si se repite en la fila
         return 0;
