@@ -65,8 +65,9 @@ void print_node(Node *n) {
 int is_valid(Node *n) {
 
   int i, j, numSub, k;
-  int mapFila[9][9] = {0};
-  int mapCol[9][9] = {0};// mapa de repeticiones
+  int mapFila[9][9] = {};
+  int mapCol[9][9] = {};
+  // mapa de repeticiones
   int *submatriz;
   // recorrer cada submatriz de 3x3 en el sudoku
 
