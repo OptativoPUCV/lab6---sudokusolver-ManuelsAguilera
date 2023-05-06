@@ -72,7 +72,7 @@ int is_valid(Node *n) {
       if (j = 8)
         printf("%d\n", mapFila[i][j]);
       else
-        printf("%d", mapFila[9][9]);
+        printf("%d", mapFila[i][j]);
   // mapa de repeticiones
   int *submatriz;
   // recorrer cada submatriz de 3x3 en el sudoku

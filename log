@@ -123,3 +123,14 @@ sudoku.c:72:11: error: suggest parentheses around assignment used as truth value
 cc1: all warnings being treated as errors
 Compilation failed
 a1a5744
+Sat 06 May 2023 04:57:31 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:72:11: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+   72 |       if (j = 8)
+      |           ^
+cc1: all warnings being treated as errors
+Compilation failed
+840f41b
